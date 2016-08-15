@@ -1,0 +1,23 @@
+matrix:
+  include:
+    - compiler: gcc
+      sudo: true
+      dist: trusty
+      env: testenv="aarch64"
+      addons:
+        apt:
+          packages:
+            - g++-5-aarch64-linux-gnu
+            - libopenal-dev
+            - libglew-dev
+            - libmysql++-dev 
+            - libboost-all-dev
+            - qemu
+        
+script:
+  - ls
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc-5 -DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++-5 ../Play--CodeGen/build_unix
+  - make
+  - qemu-aarch64 -L /usr/aarch64-linux-gnu ./CodeGenTest
