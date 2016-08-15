@@ -4,4 +4,4 @@ services:
 
 script:
   - docker pull ubuntu:xenial
-  - docker run ubuntu:xenial /bin/sh -c "apt-get -qq -y install libboost-all-dev libmysql++-dev libopenal-dev libglew-dev gcc-5-aarch64-linux-gnu g++-5-aarch64-linux-gnu qemu"
+  - docker run ubuntu:xenial /bin/sh -c "apt-get -qq update ; apt-get -qq -y install libboost-all-dev libmysql++-dev libopenal-dev libglew-dev gcc-5-aarch64-linux-gnu g++-5-aarch64-linux-gnu qemu"
