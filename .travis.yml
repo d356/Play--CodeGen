@@ -4,6 +4,6 @@ services:
 
 script:
   - docker pull ubuntu:xenial
-  - docker cp -r ../Play--CodeGen ubuntu:xenial:/Play--CodeGen
+  - docker cp ../Play--CodeGen ubuntu:xenial:/Play--CodeGen
   - docker run ubuntu:xenial /bin/sh -c "pwd ; ls"
   - docker run ubuntu:xenial /bin/sh -c "apt-get -qq update ; apt-get -qq -y install libboost-all-dev libmysql++-dev libopenal-dev libglew-dev gcc-5-aarch64-linux-gnu g++-5-aarch64-linux-gnu qemu"
