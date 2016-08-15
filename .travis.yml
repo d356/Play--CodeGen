@@ -7,7 +7,7 @@ matrix:
       addons:
         apt:
           packages:
-            - g++-5-aarch64-linux-gnu
+#            - g++-5-aarch64-linux-gnu
             - libopenal-dev
             - libglew-dev
             - libmysql++-dev 
