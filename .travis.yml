@@ -13,7 +13,7 @@ matrix:
             - libmysql++-dev 
             - libboost-all-dev
             - qemu
-        
+         
 script:
   - ls
   - mkdir build
