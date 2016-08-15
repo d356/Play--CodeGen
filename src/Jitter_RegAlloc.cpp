@@ -102,11 +102,11 @@ void CJitter::AllocateRegisters(BASIC_BLOCK& basicBlock)
 	std::cout << std::endl;
 #endif
 
-	std::map<unsigned int, StatementList::const_iterator> loadPoints;
-	std::map<unsigned int, StatementList::const_iterator> spillPoints;
+	std::map<unsigned int, StatementList::iterator> loadPoints;
+	std::map<unsigned int, StatementList::iterator> spillPoints;
 
 	//Load
-	for(const auto& statementInfo : ConstIndexedStatementList(basicBlock.statements))
+	for(const auto& statementInfo : IndexedStatementList(basicBlock.statements))
 	{
 		const auto& statementIdx(statementInfo.index);
 		if(loadStatements.find(statementIdx) != std::end(loadStatements))
@@ -116,7 +116,7 @@ void CJitter::AllocateRegisters(BASIC_BLOCK& basicBlock)
 	}
 
 	//Spill
-	for(const auto& statementInfo : ConstIndexedStatementList(basicBlock.statements))
+	for(const auto& statementInfo : IndexedStatementList(basicBlock.statements))
 	{
 		const auto& statementIdx(statementInfo.index);
 		if(spillStatements.find(statementIdx) != std::end(spillStatements))
