@@ -883,9 +883,9 @@ bool CJitter::PruneBlocks()
 	{
 		changed = false;
 
-		auto toDeleteIterator = m_basicBlocks.cend();
-		for(auto outerBlockIterator(m_basicBlocks.cbegin());
-			outerBlockIterator != m_basicBlocks.cend(); outerBlockIterator++)
+		auto toDeleteIterator = m_basicBlocks.end();
+		for(auto outerBlockIterator(m_basicBlocks.begin());
+			outerBlockIterator != m_basicBlocks.end(); outerBlockIterator++)
 		{
 			//First block is always referenced
 			if(outerBlockIterator == m_basicBlocks.begin()) continue;
