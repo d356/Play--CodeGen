@@ -3,4 +3,4 @@ services:
   - docker
 
 script:
-  - docker pull ubuntu/xenial
+  - docker pull ubuntu:xenial
